@@ -1,0 +1,291 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/progress",
+  "title": "Progress",
+  "description": "Customize typography and style paragraphs with multiple setting options.",
+  "keywords": ["progress", "bar"],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "labelEnable": {
+      "type": "boolean",
+      "default": true
+    },
+    "layout": {
+      "type": "string",
+      "default": "layout-1"
+    },
+    "labelPosition": {
+      "type": "string",
+      "default": "outside"
+    },
+    "progress": {
+      "type": "number",
+      "default": 50,
+      "style": [
+        {
+          "selector": ".blockart-progress{{WRAPPER}} { --progress: {{VALUE}}; }"
+        }
+      ]
+    },
+    "maxProgress": {
+      "type": "number",
+      "default": 100,
+      "style": [
+        {
+          "selector": ".blockart-progress{{WRAPPER}} { --maxprogress: {{VALUE}}; }"
+        }
+      ]
+    },
+    "size": {
+      "type": "number",
+      "default": 150,
+      "style": [
+        {
+          "selector": ".blockart-progress{{WRAPPER}} { --progress-size: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "thickness": {
+      "type": "number",
+      "default": 8,
+      "style": [
+        {
+          "selector": ".blockart-progress{{WRAPPER}} { --progress-thickness: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "alignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": ".blockart-paragraph{{WRAPPER}} {text-align: {{VALUE}}; }"
+        }
+      ]
+    },
+    "barHeight": {
+      "type": "number",
+      "style": [
+        {
+          "selector": ".blockart-progress{{WRAPPER}} .blockart-progress-bar  { height: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "labelTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-progress-bar-text"
+        },
+        {
+          "selector": "{{WRAPPER}} .blockart-progress-circle .blockart-number"
+        }
+      ]
+    },
+    "labelColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}}.blockart-progress .blockart-progress-bar-text {color: {{VALUE}}; }"
+        },
+        {
+          "selector": "{{WRAPPER}} .blockart-progress-circle .blockart-number {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "barBackground": {
+      "type": "string",
+      "default": "#2563EB",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-progress-bar .blockart-progress-inner-bar { background: {{VALUE}}; }"
+        },
+        {
+          "selector": "{{WRAPPER}} .blockart-progress-circle svg circle.blockart-progress-circle__bar { stroke: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "string",
+      "default": "#E9EFFD",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-progress-bar { background: {{VALUE}}; }"
+        },
+        {
+          "selector": "{{WRAPPER}} .blockart-progress-circle svg circle { stroke: {{VALUE}}; }"
+        }
+      ]
+    },
+    "barBorder": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-progress-bar"
+        }
+      ]
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": ".blockart-paragraph{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor",
+  "viewScript": "blockart-frontend-progress"
+}

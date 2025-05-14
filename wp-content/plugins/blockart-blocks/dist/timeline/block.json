@@ -1,0 +1,534 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/timeline",
+  "title": "Timeline",
+  "description": "Display Frequently Asked Titles as an accordion.",
+  "keywords": [
+    "timeline",
+    "accordion",
+    "title"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false,
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "layoutAlignment": {
+      "type": "object",
+      "default": {
+        "desktop": "center"
+      }
+    },
+    "itemPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "left": 12,
+          "right": 12,
+          "bottom": 12,
+          "top": 12,
+          "unit": "px",
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-timeline-content > div { padding: {{VALUE}};}"
+        }
+      ]
+    },
+    "itemMarginBottom": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "value": 40,
+          "unit": "px"
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-control { margin-bottom: {{VALUE}}; }"
+        }
+      ]
+    },
+    "labelTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "size": {
+          "desktop": {
+            "unit": "px",
+            "value": 18
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-timeline-label"
+        }
+      ]
+    },
+    "descriptionTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "size": {
+          "desktop": {
+            "unit": "px",
+            "value": 14
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-timeline-description"
+        }
+      ]
+    },
+    "labelAlignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": ".blockart-timeline-label { text-align: {{VALUE}}; }"
+        }
+      ]
+    },
+    "titleTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "size": {
+          "desktop": {
+            "unit": "px",
+            "value": 18
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-timeline-title"
+        }
+      ]
+    },
+    "justification": {
+      "type": "object"
+    },
+    "orientation": {
+      "type": "object"
+    },
+    "titleAlignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": ".blockart-timeline-title { text-align: {{VALUE}}; }"
+        }
+      ]
+    },
+    "descriptionAlignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": ".blockart-timeline-description { text-align: {{VALUE}}; }"
+        }
+      ]
+    },
+    "flexWrap": {
+      "type": "boolean",
+      "default": true
+    },
+    "connectorThickness": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "value": 3,
+          "unit": "px"
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-timeline-line { width: {{VALUE}} !important; }"
+        },
+        {
+          "selector": "{{WRAPPER}} .blockart-timeline-marker { border-width: {{VALUE}} !important; }"
+        }
+      ]
+    },
+    "connectorLayout": {
+      "type": "string",
+      "default": "icon"
+    },
+    "connectorIcon": {
+      "type": "string",
+      "default": "calendar"
+    },
+    "titlePadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": false,
+          "unit": "px",
+          "left": 10,
+          "right": 10,
+          "top": 10,
+          "bottom": 10
+        }
+      },
+      "style": [
+        {
+          "selector": ".blockart-timeline-title-wrapper { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "labelColor1": {
+      "type": "string",
+      "default": "#000000",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "==",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-label { color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "labelColor2": {
+      "type": "string",
+      "default": "#000000",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "!=",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-label { color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "titleColor1": {
+      "type": "string",
+      "default": "#000000",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "==",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-content .blockart-timeline-title { color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "titleColor2": {
+      "type": "string",
+      "default": "#000000",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "!=",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-content .blockart-timeline-title { color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "titleBackground1": {
+      "type": "string",
+      "default": "#fff",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "==",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-title-wrapper { background: {{VALUE}}; }"
+        }
+      ]
+    },
+    "titleBackground2": {
+      "type": "string",
+      "default": "#fff",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "!=",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-title-wrapper { background: {{VALUE}}; }"
+        }
+      ]
+    },
+    "descriptionColor1": {
+      "type": "string",
+      "default": "#000",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "==",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-content .blockart-timeline-description { color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "descriptionColor2": {
+      "type": "string",
+      "default": "#000",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "!=",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-content .blockart-timeline-description { color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "itemBackground1": {
+      "type": "string",
+      "default": "#e9effd",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "==",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-content, {{WRAPPER}} .blockart-timeline-marker::before, {{WRAPPER}} .blockart-timeline-marker::after { background: {{VALUE}}; }"
+        }
+      ]
+    },
+    "itemBackground2": {
+      "type": "string",
+      "default": "#e9effd",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "!=",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-content, {{WRAPPER}} .blockart-timeline-marker::before, {{WRAPPER}} .blockart-timeline-marker::after { background: {{VALUE}}; }"
+        }
+      ]
+    },
+    "connectorBackground1": {
+      "type": "string",
+      "default": "#2563eb",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "==",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-line, {{WRAPPER}} .blockart-timeline-marker { background: {{VALUE}};}"
+        }
+      ]
+    },
+    "connectorBackground2": {
+      "type": "string",
+      "default": "#2563eb",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "style",
+              "relation": "!=",
+              "value": "filled"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-timeline-line, {{WRAPPER}} .blockart-timeline-marker { background: {{VALUE}} !important; }"
+        },
+        {
+          "selector": "{{WRAPPER}} .blockart-marker-layout-outline {border-color: {{VALUE}} !important;}"
+        }
+      ]
+    },
+    "connectorColor": {
+      "type": "string",
+      "default": "#fff",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-timeline-marker { color:{{VALUE}} !important;} {{WRAPPER}} .blockart-timeline-marker svg{ fill:{{VALUE}} }"
+        }
+      ]
+    },
+    "flexGap": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "value": 8,
+          "unit": "px"
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { gap: {{VALUE}}; }"
+        }
+      ]
+    },
+    "positionProperty": {
+      "type": "object",
+      "default": {
+        "positionProperty": 1,
+        "position": "none"
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockHTML": {
+      "type": "string",
+      "default": "div"
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockOpacity": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { opacity: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor",
+  "viewScript": "blockart-frontend-timeline"
+}

@@ -1,0 +1,322 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/countdown",
+  "title": "Countdown",
+  "description": "Countdown.",
+  "keywords": [
+    "count",
+    "countdown"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "date": {
+      "type": "object"
+    },
+    "daysLabel": {
+      "type": "string",
+      "default": "Days"
+    },
+    "minutesLabel": {
+      "type": "string",
+      "default": "Minutes"
+    },
+    "hoursLabel": {
+      "type": "string",
+      "default": "Hours"
+    },
+    "secondsLabel": {
+      "type": "string",
+      "default": "Seconds"
+    },
+    "textToggle": {
+      "type": "boolean",
+      "default": true
+    },
+    "typographyToggle": {
+      "type": "boolean",
+      "default": false
+    },
+    "layout": {
+      "type": "string",
+      "default": "default"
+    },
+    "boxBorderEnable": {
+      "type": "boolean",
+      "default": false
+    },
+    "separatorRight": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}}.blockart-countdown .blockart-countdown-items .blockart-countdown-number::after { right: {{VALUE}}; }"
+        }
+      ]
+    },
+    "separatorType": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}}.blockart-countdown .blockart-countdown-items .blockart-countdown-number::after {content: '{{VALUE}}'; }"
+        }
+      ]
+    },
+    "separatorColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-countdown-number::after {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "digitColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-countdown-number {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "digitGap": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} {gap: {{VALUE}}; }"
+        }
+      ]
+    },
+    "boxPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}.blockart-countdown .blockart-countdown-items {padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "digitTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-countdown-number"
+        }
+      ]
+    },
+    "labelColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-countdown-label {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "alignment": {
+      "type": "object",
+      "default": {
+        "desktop": "center"
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} {justify-content: {{VALUE}}; }"
+        }
+      ]
+    },
+    "labelTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-countdown-label"
+        }
+      ]
+    },
+    "blockBorder": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "boxBorder": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}.blockart-countdown .blockart-countdown-items"
+        }
+      ]
+    },
+    "boxBackground": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-countdown-items"
+        }
+      ]
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": ".blockart-paragraph{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor",
+  "viewScript": "blockart-frontend-countdown"
+}

@@ -1,0 +1,349 @@
+{
+  "apiVersion": 2,
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/testimonial-slide",
+  "title": "Slide",
+  "description": "Create a slide inside testimonial-slide",
+  "keywords": [
+    "testimonial-slide"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "parent": [
+    "blockart/testimonial"
+  ],
+  "supports": {
+    "className": false,
+    "customClassName": false,
+    "html": false,
+    "inserter": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "image": {
+      "type": "object",
+      "default": {}
+    },
+    "imageEnable": {
+      "type": "boolean",
+      "default": true
+    },
+    "textEnable": {
+      "type": "boolean",
+      "default": true
+    },
+    "designationEnable": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingEnable": {
+      "type": "boolean",
+      "default": true
+    },
+    "testimonialName": {
+      "type": "string",
+      "default": "Alex Gordon"
+    },
+    "markup": {
+      "type": "string",
+      "default": "h2"
+    },
+    "designation": {
+      "type": "string",
+      "default": "Designation"
+    },
+    "imageWidth": {
+      "type": "object",
+      "default": {
+        "desktop": 125
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-inner-content .blockart-image { width: {{VALUE}}px; height: auto; }"
+        }
+      ]
+    },
+    "headingColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-name .blockart-testimonial-member-name { color: {{VALUE}} }"
+        }
+      ]
+    },
+    "textColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-text p { color: {{VALUE}} }"
+        }
+      ]
+    },
+    "textContent": {
+      "type": "string",
+      "default": "Click here to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+    },
+    "textMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-text p { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "headingMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-name .blockart-testimonial-member-name { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "designationColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-designation p { color: {{VALUE}} }"
+        }
+      ]
+    },
+    "textTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "weight": 400
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-text p"
+        }
+      ]
+    },
+    "headingTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "weight": 400
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-name .blockart-testimonial-member-name"
+        }
+      ]
+    },
+    "designationTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "weight": 400
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-designation p"
+        }
+      ]
+    },
+    "designationMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-designation p { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "imageBorderRadius": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "left": 100,
+          "right": 100,
+          "top": 100,
+          "bottom": 100,
+          "unit": "px"
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-testimonial-image .blockart-image { border-radius: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "positionProperty": {
+      "type": "object",
+      "default": {
+        "positionProperty": 1,
+        "position": "none"
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockHTML": {
+      "type": "string",
+      "default": "div"
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockOpacity": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { opacity: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor"
+}

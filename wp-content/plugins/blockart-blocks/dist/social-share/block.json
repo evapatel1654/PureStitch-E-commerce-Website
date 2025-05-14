@@ -1,0 +1,204 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/socials",
+  "title": "Social Share",
+  "description": "Share your content through different platforms.",
+  "keywords": [
+    "social share",
+    "social"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "className": {
+      "type": "string"
+    },
+    "display": {
+      "type": "string",
+      "default": "horizontal"
+    },
+    "alignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": ".blockart-socials{{WRAPPER}} {text-align: {{VALUE}}; justify-content: {{VALUE}}; }"
+        }
+      ]
+    },
+    "stackOn": {
+      "type": "string",
+      "default": "none"
+    },
+    "presets": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-socials{{WRAPPER}} .blockart-social-source-wrap svg { height:auto; width: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "bgSize": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-socials{{WRAPPER}} .blockart-social-inner {padding: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "radius": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-socials{{WRAPPER}} .blockart-social-inner {border-radius: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "color": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-socials{{WRAPPER}} .blockart-social-link svg {fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "hoverColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-socials{{WRAPPER}} .blockart-social-link svg:hover {fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": ".blockart-socials{{WRAPPER}} .blockart-social-inner"
+        }
+      ]
+    },
+    "hoverBackground": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": ".blockart-socials{{WRAPPER}}  .blockart-social-inner:hover"
+        }
+      ]
+    },
+    "columnGap": {
+      "type": "object",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "display",
+              "relation": "===",
+              "value": "vertical"
+            }
+          ],
+          "selector": ".blockart-socials{{WRAPPER}} .blockart-social-inner {margin-top: calc({{VALUE}}px/2); margin-bottom: calc({{VALUE}}px/2); }"
+        }
+      ]
+    },
+    "rowGap": {
+      "type": "object",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "display",
+              "relation": "===",
+              "value": "horizontal"
+            }
+          ],
+          "selector": ".blockart-socials{{WRAPPER}} .blockart-social-inner {margin-left: calc({{VALUE}}px/2); margin-right: calc({{VALUE}}px/2); }"
+        }
+      ]
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor"
+}

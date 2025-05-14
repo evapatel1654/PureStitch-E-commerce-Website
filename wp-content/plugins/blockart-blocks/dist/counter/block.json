@@ -1,0 +1,296 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/counter",
+  "title": "Counter",
+  "description": "Create counter on different Style.",
+  "keywords": [
+    "counter"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "markup": {
+      "type": "string",
+      "default": "h2"
+    },
+    "contentMarkup": {
+      "type": "string",
+      "default": "p"
+    },
+    "text": {
+      "type": "string"
+    },
+    "startNumber": {
+      "type": "number",
+      "default": 0
+    },
+    "endNumber": {
+      "type": "number",
+      "default": 100
+    },
+    "numberDecimals": {
+      "type": "number",
+      "default": 0
+    },
+    "numberPrefix": {
+      "type": "string"
+    },
+    "numberSuffix": {
+      "type": "string",
+      "default": "%"
+    },
+    "animationDuration": {
+      "type": "number",
+      "default": 2
+    },
+    "numberSeparator": {
+      "type": "string",
+      "default": ","
+    },
+    "textColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-counter-content .blockart-counter-text {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "iconColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-counter-icon .blockart-icon {fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "alignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-counter-container {text-align: {{VALUE}}; }"
+        }
+      ]
+    },
+    "typography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "weight": 400
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-counter-content .blockart-counter-text"
+        }
+      ]
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "hoverBorder": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}:hover"
+        }
+      ]
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-counter-wrapper { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    },
+    "numberColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-counter-number { color: {{VALUE}} } {{WRAPPER}} #countup { color: {{VALUE}} }"
+        }
+      ]
+    },
+    "numberTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-counter-number, {{WRAPPER}} #countup"
+        }
+      ]
+    },
+    "icon": {
+      "type": "object",
+      "default": {
+        "enable": true,
+        "icon": "star"
+      }
+    },
+    "iconSize": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-counter-icon .blockart-icon { width: {{VALUE}}px; height: auto; }"
+        }
+      ]
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor",
+  "viewScript": "blockart-frontend-counter"
+}

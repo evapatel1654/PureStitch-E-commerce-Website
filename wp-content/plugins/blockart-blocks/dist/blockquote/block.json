@@ -1,0 +1,314 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/blockquote",
+  "title": "Blockquote",
+  "description": "Customize typography and style blockquotes with multiple setting options.",
+  "keywords": ["blockquote", "text"],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "expiryDate": {
+      "type": "string"
+    },
+    "layoutStyle": {
+      "type": "string",
+      "default": "border"
+    },
+    "quoteMarkSize": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "value": 35,
+          "unit": "px"
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} blockquote svg { width: {{VALUE}};height: {{VALUE}} }"
+        }
+      ]
+    },
+    "quote": {
+      "type": "string",
+      "default": "Before you marry a person, you should first make them use a computer with slow Internet to see who they really are."
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": false,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 10
+          }
+        },
+        "type": "solid",
+        "color": "#2563eb"
+      },
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "layoutStyle",
+              "relation": "==",
+              "value": "border"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-blockquote-main"
+        }
+      ]
+    },
+    "author": {
+      "type": "string",
+      "default": "Will Ferrell"
+    },
+    "alignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": ".blockart-blockquote{{WRAPPER}} {text-align: {{VALUE}}; }"
+        }
+      ]
+    },
+    "authorAlignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": ".blockart-blockquote{{WRAPPER}} .blockart-blockquote-author {text-align: {{VALUE}}; }"
+        }
+      ]
+    },
+    "quoteTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "fontStyle": "italic",
+        "size": {
+          "desktop": {
+            "value": 20,
+            "unit": "px"
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-blockquote-quote"
+        }
+      ]
+    },
+    "authorTypography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "size": {
+          "desktop": {
+            "value": 14,
+            "unit": "px"
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-blockquote-author"
+        }
+      ]
+    },
+    "color": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-blockquote{{WRAPPER}} {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "quoteMarkColor": {
+      "type": "string",
+      "default": "#2563eb",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} blockquote svg {fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1,
+        "color": "#d8eefb"
+      },
+      "style": [
+        {
+          "selector": ".blockart-blockquote{{WRAPPER}}"
+        }
+      ]
+    },
+    "hoverBackground": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": ".blockart-blockquote{{WRAPPER}}:hover"
+        }
+      ]
+    },
+    "quoteMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": false,
+          "top": 0,
+          "bottom": 20,
+          "left": 10,
+          "right": 0
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} blockquote { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "authorMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": false,
+          "top": 0,
+          "bottom": 0,
+          "left": 10,
+          "right": 0
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-blockquote-author { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": false,
+          "top": 20,
+          "bottom": 20
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": false,
+          "top": 50,
+          "right": 20,
+          "bottom": 50,
+          "left": 20
+        }
+      },
+      "style": [
+        {
+          "selector": ".blockart-blockquote{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor"
+}

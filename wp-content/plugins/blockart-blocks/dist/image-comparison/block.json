@@ -1,0 +1,201 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/image-comparison",
+  "title": "Image Comparison",
+  "description": "Compare two images with a slider",
+  "keywords": [
+    "image-comparison",
+    "image",
+    "compare",
+    "comparison-slider",
+    "blockart"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "attributes": {
+    "orientation": {
+      "type": "string",
+      "default": "horizontal",
+      "enum": ["horizontal", "vertical"]
+    },
+    "comparisonSlider": {
+      "type": "string",
+      "default": "default",
+      "enum": ["default", "button-only", "hide-slider"]
+    },
+    "beforeImageText": {
+      "type": "string",
+      "default": "Before"
+    },
+    "afterImageText": {
+      "type": "string",
+      "default": "After"
+    },
+    "enableLabel": {
+      "type": "boolean",
+      "default": false
+    },
+    "clientId": {
+      "type": "string"
+    },
+    "beforeImage": {
+      "type": "object"
+    },
+    "afterImage": {
+      "type": "object"
+    },
+    "color": {
+      "type": "string",
+      "default": "#ffffff",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-image-comparison-label {color: {{VALUE}}; }"
+        },
+        {
+          "selector": "{{WRAPPER}} .b-dics__text {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "string",
+      "default": "#0000004f",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-image-comparison-label {background: {{VALUE}}; }"
+        },
+        {
+          "selector": "{{WRAPPER}} .blockart-image-comparison-image-container .b-dics__image-container .b-dics__text {background: {{VALUE}}; }"
+        }
+      ]
+    },
+    "typography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "weight": 400,
+        "size": {
+          "desktop": {
+            "value": 12,
+            "unit": "px"
+          }
+        },
+        "lineHeight": {
+          "desktop": {
+            "value": 1.5,
+            "unit": "em"
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-image-comparison-label"
+        },
+        {
+          "selector": "{{WRAPPER}} .blockart-image-comparison-image-container .b-dics__image-container .b-dics__text"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor",
+  "viewScript": "blockart-frontend-image-comparison"
+}

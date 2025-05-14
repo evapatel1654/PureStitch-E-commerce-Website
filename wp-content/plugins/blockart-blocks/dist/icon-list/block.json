@@ -1,0 +1,338 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/icon-list",
+  "title": "Icon List",
+  "description": "Create a list with icons.",
+  "keywords": [
+    "icon list",
+    "list"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-icon-list-item svg {fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "iconHoverColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-icon-list{{WRAPPER}} .blockart-icon-list-item:hover svg {fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": ".blockart-icon-list{{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper"
+        }
+      ]
+    },
+    "hoverBackground": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": ".blockart-icon-list{{WRAPPER}} .blockart-icon-list-item:hover .blockart-icon-wrapper"
+        }
+      ]
+    },
+    "labelColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-icon-list{{WRAPPER}} .blockart-list-label {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "labelHoverColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-list-label:hover {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "itemGap": {
+      "type": "number",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "layout",
+              "relation": "==",
+              "value": "horizontal"
+            }
+          ],
+          "selector": "{{WRAPPER}}.blockart-icon-list .blockart-icon-list-item {margin-left: {{VALUE}}px;}"
+        },
+        {
+          "condition": [
+            {
+              "key": "layout",
+              "relation": "==",
+              "value": "vertical"
+            }
+          ],
+          "selector": "{{WRAPPER}}.blockart-icon-list .blockart-icon-list-item {margin-bottom: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "iconLabelGap": {
+      "type": "object",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "iconPosition",
+              "relation": "==",
+              "value": "left"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper {margin-right: {{VALUE}}px; }"
+        },
+        {
+          "condition": [
+            {
+              "key": "iconPosition",
+              "relation": "==",
+              "value": "right"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper {margin-left: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "iconSize": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper svg {height: auto; width: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "iconBgSize": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper {padding: {{VALUE}}px;}"
+        }
+      ]
+    },
+    "typography": {
+      "type": "object",
+      "default": {
+        "typography": 1,
+        "weight": 500
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-icon-list-item .blockart-list-label"
+        }
+      ]
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper"
+        }
+      ]
+    },
+    "hoverBorder": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper:hover"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string",
+      "default": "check"
+    },
+    "itemCount": {
+      "type": "number",
+      "default": 3
+    },
+    "layout": {
+      "type": "string",
+      "default": "vertical"
+    },
+    "alignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} > div {text-align: {{VALUE}}; justify-content: {{VALUE}}; width: 100%; }"
+        }
+      ]
+    },
+    "iconAlignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper {display: flex; } {{WRAPPER}} .blockart-icon-list-item .blockart-icon-wrapper {align-self: {{VALUE}}; }"
+        }
+      ]
+    },
+    "design": {
+      "type": "string",
+      "default": "default"
+    },
+    "iconPosition": {
+      "type": "string",
+      "default": "left"
+    },
+    "toggleLabels": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor"
+}

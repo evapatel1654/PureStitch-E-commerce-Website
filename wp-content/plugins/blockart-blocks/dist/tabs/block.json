@@ -1,0 +1,136 @@
+{
+  "apiVersion": 2,
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/tabs",
+  "title": "Tabs",
+  "description": "Tabs block allows you to add multiple tabs.",
+  "keywords": [
+    "tab",
+    "tabs"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "providesContext": {
+    "blockart/initialOpenTab": "initialOpenTab"
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "numberOfTabs": {
+      "type": "number",
+      "default": 3
+    },
+    "initialOpenTab": {
+      "type": "number"
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "className": {
+      "type": "string"
+    },
+    "tabHeaders": {
+      "type": "array",
+      "default": [
+        "Tab 1",
+        "Tab 2",
+        "Tab 3"
+      ]
+    },
+    "tabActive": {
+      "type": "number",
+      "default": 0
+    },
+    "tabActiveFront": {
+      "type": "number",
+      "default": 0
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": ".blockart-tabs{{WRAPPER}}"
+        }
+      ]
+    },
+    "design": {
+      "type": "string",
+      "default": "horizontal-underline"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor",
+  "viewScript": "blockart-frontend-tabs"
+}

@@ -1,0 +1,257 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/notice",
+  "title": "Notice",
+  "description": "Add different inline notices into your page.",
+  "keywords": ["notice", "text", "message"],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "isDismissible": {
+      "type": "boolean",
+      "default": true
+    },
+    "dismissIconPosition": {
+      "type": "string",
+      "default": "right"
+    },
+    "dismissVertical": {
+      "type": "number",
+      "default": 20,
+      "style": [
+        {
+          "selector": "{{WRAPPER}} svg.dismiss {top: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "dismissHorizontal": {
+      "type": "number",
+      "default": 20,
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "dismissIconPosition",
+              "relation": "==",
+              "value": "right"
+            }
+          ],
+          "selector": "{{WRAPPER}} svg.dismiss {right: {{VALUE}}px; }"
+        },
+        {
+          "condition": [
+            {
+              "key": "dismissIconPosition",
+              "relation": "==",
+              "value": "left"
+            }
+          ],
+          "selector": "{{WRAPPER}} svg.dismiss {left: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "enableCookie": {
+      "type": "boolean",
+      "default": false
+    },
+    "hideOnDismiss": {
+      "type": "number",
+      "default": -1
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": false,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 5,
+            "unit": "px"
+          }
+        },
+        "color": "#2563eb",
+        "type": "solid"
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "color": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-notice{{WRAPPER}} {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "hoverColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-notice{{WRAPPER}}:hover {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1,
+        "color": "#FAFBFF"
+      },
+      "style": [
+        {
+          "selector": ".blockart-notice{{WRAPPER}}"
+        }
+      ]
+    },
+    "hoverBackground": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": ".blockart-notice{{WRAPPER}}:hover"
+        }
+      ]
+    },
+    "borderColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} {border-color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "borderHoverColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}}:hover {border-color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true,
+          "top": 12,
+          "right": 12,
+          "bottom": 12,
+          "left": 12
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor",
+  "viewScript": "blockart-frontend-notice"
+}

@@ -1,0 +1,338 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "blockart/testimonial",
+  "title": "Testimonial",
+  "description": "Create a slider with multiple testimonial.",
+  "keywords": [
+    "testimonial"
+  ],
+  "category": "blockart",
+  "textdomain": "blockart",
+  "supports": {
+    "className": false,
+    "customClassName": false,
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "justification": {
+      "type": "object"
+    },
+    "orientation": {
+      "type": "object"
+    },
+    "alignment": {
+      "type": "object"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "loop": {
+      "type": "boolean",
+      "default": false
+    },
+    "pauseOnHover": {
+      "type": "boolean",
+      "default": true
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "speed": {
+      "type": "number",
+      "default": 800
+    },
+    "interval": {
+      "type": "object",
+      "default": 5000
+    },
+    "pagination": {
+      "type": "boolean",
+      "default": false
+    },
+    "perPage": {
+      "type": "number",
+      "default": 1
+    },
+    "perMove": {
+      "type": "number",
+      "default": 1
+    },
+    "borderEnable": {
+      "type": "boolean",
+      "default": false
+    },
+    "dotColor": {
+      "type": "string",
+      "default": "#000000",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .splide ul.splide__pagination li button.splide__pagination__page { background: {{VALUE}}; } {{WRAPPER}} .splide__arrow svg { fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "arrowBackground": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}}.blockart-testimonial .splide .splide__arrows .splide__arrow { background-color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "arrowDistance": {
+      "type": "object",
+      "default": {
+        "value": -36,
+        "unit": "px"
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .splide__arrows .splide__arrow--prev { left: {{VALUE}}; } {{WRAPPER}} .splide__arrows .splide__arrow--next { right: {{VALUE}}; }"
+        }
+      ]
+    },
+    "dotMargin": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .splide__pagination { bottom: {{VALUE}}; }"
+        }
+      ]
+    },
+    "isArrowBorderEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrowBorder": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "isArrowBorderEnabled",
+              "relation": "==",
+              "value": true
+            }
+          ],
+          "selector": "{{WRAPPER}}.blockart-testimonial .splide .splide__arrows .splide__arrow"
+        }
+      ]
+    },
+    "arrowSize": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .splide__arrow svg { width: {{VALUE}}; height: auto; }"
+        }
+      ]
+    },
+    "spaceBetween": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .splide__list {gap: {{VALUE}}; }"
+        }
+      ]
+    },
+    "color": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} p {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "flexWrap": {
+      "type": "boolean",
+      "default": true
+    },
+    "flexGap": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "value": 8,
+          "unit": "px"
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { gap: {{VALUE}}; }"
+        }
+      ]
+    },
+    "positionProperty": {
+      "type": "object",
+      "default": {
+        "positionProperty": 1,
+        "position": "none"
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}}"
+        }
+      ]
+    },
+    "blockMargin": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { margin: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockPadding": {
+      "type": "object",
+      "default": {
+        "dimension": 1,
+        "desktop": {
+          "lock": true
+        }
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { padding: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockHTML": {
+      "type": "string",
+      "default": "div"
+    },
+    "blockZIndex": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { z-index: {{VALUE}}; }"
+        }
+      ]
+    },
+    "blockOpacity": {
+      "type": "number",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { opacity: {{VALUE}}; }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "animation": {
+      "type": "string"
+    },
+    "interaction": {
+      "type": "object"
+    },
+    "position": {
+      "type": "object"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "colReverseOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:62em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "colReverseOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} > .blockart-container > .blockart-section-inner { flex-direction:column-reverse; } }"
+        }
+      ]
+    },
+    "blockCSS": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "style": "blockart-blocks",
+  "editorScript": "blockart-blocks",
+  "editorStyle": "blockart-blocks-editor",
+  "viewScript": "blockart-frontend-slider"
+}

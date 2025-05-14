@@ -1,0 +1,266 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "title": "Tab Titles",
+  "name": "blockart/tab-titles",
+  "category": "blockart",
+  "parent": [
+    "blockart/tabs"
+  ],
+  "usesContext": [
+    "blockart/initialOpenTab"
+  ],
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "titles": {
+      "type": "array"
+    },
+    "alignment": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} { justify-content: {{VALUE}}; }"
+        }
+      ]
+    },
+    "columnGap": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}}.blockart-tabs-triggers { column-gap: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "rowGap": {
+      "type": "object",
+      "style": [
+        {
+          "selector": "{{WRAPPER}}.blockart-tabs-triggers { row-gap: {{VALUE}}px; }"
+        }
+      ]
+    },
+    "icon": {
+      "type": "string",
+      "default": "arrowRight"
+    },
+    "iconPosition": {
+      "type": "string",
+      "default": "right"
+    },
+    "iconSize": {
+      "type": "object",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "icon",
+              "relation": "!=",
+              "value": ""
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-tabs-icon .blockart-icon { width: {{VALUE}}; height: auto; }"
+        }
+      ]
+    },
+    "iconGap": {
+      "type": "object",
+      "style": [
+        {
+          "condition": [
+            {
+              "key": "icon",
+              "relation": "!=",
+              "value": ""
+            },
+            {
+              "key": "iconPosition",
+              "relation": "==",
+              "value": "left"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-tabs-icon { margin-right: {{VALUE}}; }"
+        },
+        {
+          "condition": [
+            {
+              "key": "icon",
+              "relation": "!=",
+              "value": ""
+            },
+            {
+              "key": "iconPosition",
+              "relation": "==",
+              "value": "right"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-tabs-icon { margin-left: {{VALUE}}; }"
+        },
+        {
+          "condition": [
+            {
+              "key": "icon",
+              "relation": "!=",
+              "value": ""
+            },
+            {
+              "key": "iconPosition",
+              "relation": "==",
+              "value": "top"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-tabs-icon { display: block; margin-bottom: {{VALUE}}; }"
+        },
+        {
+          "condition": [
+            {
+              "key": "icon",
+              "relation": "!=",
+              "value": ""
+            },
+            {
+              "key": "iconPosition",
+              "relation": "==",
+              "value": "bottom"
+            }
+          ],
+          "selector": "{{WRAPPER}} .blockart-tabs-icon { display: block; margin-top: {{VALUE}}; }"
+        }
+      ]
+    },
+    "color": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-tabs-trigger:not(.is-active) span {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "activeColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-tabs-trigger.is-active span {color: {{VALUE}}; }"
+        }
+      ]
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-tabs-trigger:not(.is-active)"
+        }
+      ]
+    },
+    "activeBackground": {
+      "type": "object",
+      "default": {
+        "background": 1
+      },
+      "style": [
+        {
+          "selector": "{{WRAPPER}} .blockart-tabs-trigger.is-active"
+        }
+      ]
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": ".blockart-tabs {{WRAPPER}} .blockart-tabs-trigger:not(.is-active)"
+        }
+      ]
+    },
+    "activeBorder": {
+      "type": "object",
+      "default": {
+        "border": 1,
+        "radius": {
+          "desktop": {
+            "lock": true
+          }
+        },
+        "size": {
+          "desktop": {
+            "lock": true
+          }
+        }
+      },
+      "style": [
+        {
+          "selector": ".blockart-tabs {{WRAPPER}} .blockart-tabs-trigger.is-active"
+        }
+      ]
+    },
+    "iconColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-tabs {{WRAPPER}} .blockart-tabs-trigger:not(.is-active) .blockart-icon {fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "activeIconColor": {
+      "type": "string",
+      "style": [
+        {
+          "selector": ".blockart-tabs {{WRAPPER}} .blockart-tabs-trigger.is-active .blockart-icon {fill: {{VALUE}}; }"
+        }
+      ]
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (min-width:48em) and (max-width:62em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "style": [
+        {
+          "selector": "@media (max-width:48em) { {{WRAPPER}} { display: none; } }"
+        }
+      ]
+    },
+    "cssID": {
+      "type": "string"
+    },
+    "className": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "inserter": false,
+    "reusable": false,
+    "html": false,
+    "className": false,
+    "customClassName": false
+  }
+}
